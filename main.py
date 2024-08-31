@@ -55,7 +55,8 @@ def main():
                 score_counter = end_font.render(f"Score: {score}", False, "red1")
                 player_alive = False
         if not player_alive:
-            screen.blit(end_font.render("GAMEOVER PRESS ENTER", False, "red1"), (end_size[0] / 2., end_size[1] / 2.5))
+            screen.blit(end_font.render("GAMEOVER", False, "red1"), ((SCREEN_WIDTH - (end_size[0] * 0.4)) / 2., (SCREEN_HEIGHT - (end_size[1]) / 2) / 2.))
+            screen.blit(end_font.render("PRESS: ENTER", False, "red1"), ((SCREEN_WIDTH - (end_size[0] * 0.5)) / 2., (SCREEN_HEIGHT + (end_size[1] * 2)) / 2.))
             if keys[pygame.K_RETURN]:
                 score = 0
                 score_counter = game_font.render(f"Score: {score}", False, "whitesmoke")
@@ -64,7 +65,7 @@ def main():
                 player_alive = True
                 player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
                 screen.fill("black")
-        screen.blit(score_counter, (1, 0))
+        screen.blit(score_counter, (0, 0))
 
         for ob in drawable:
             ob.draw(screen)

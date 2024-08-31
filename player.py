@@ -53,4 +53,4 @@ class Player(CircleShape):
             self.shoot()
 
         if self.cooldown > 0:
-            self.cooldown -= 0.01
+            self.cooldown -= dt
